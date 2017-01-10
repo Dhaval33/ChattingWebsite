@@ -32,7 +32,7 @@ public class Blog extends BaseDomain{
 	
 	private String reason;
 	
-	private CLOB description;
+	private String description;
 
 	public String getId() {
 		return id;
@@ -82,12 +82,14 @@ public class Blog extends BaseDomain{
 		this.reason = reason;
 	}
 
-	public CLOB getDescription() {
+	public String getDescription() {
 		return description;
 	}
 
-	public void setDescription(CLOB description) {
+	public void setDescription(String description) {
 		this.description = description;
 	}
+
+	
 
 }

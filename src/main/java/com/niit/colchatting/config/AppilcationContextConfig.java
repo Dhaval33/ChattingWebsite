@@ -1,5 +1,9 @@
 package com.niit.colchatting.config;
 
+
+
+
+
 import java.util.Properties;
 
 import javax.sql.DataSource;
@@ -10,10 +14,12 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.springframework.orm.hibernate4.HibernateTransactionManager;
-import org.springframework.orm.hibernate4.LocalSessionFactoryBuilder;
+import org.springframework.orm.hibernate5.HibernateTransactionManager;
+import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+import com.niit.colchatting.model.Blog;
+import com.niit.colchatting.model.Job;
 import com.niit.colchatting.model.User;
 
 
@@ -27,9 +33,9 @@ public class AppilcationContextConfig {
 	public DataSource getOracleDataSource(){
 		
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("org.jdbc.odbc.OracleDriver");
+		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
 		dataSource.setUrl("jdbc:oracle:thin:@localhost:1521:XE");
-		dataSource.setUsername("ROOT");
+		dataSource.setUsername("Dhaval33");
 		dataSource.setPassword("abc");
 		
 		Properties connectionProperties = new Properties();
@@ -46,6 +52,8 @@ public class AppilcationContextConfig {
 	public SessionFactory getSessionFactory(DataSource dataSource){
      LocalSessionFactoryBuilder sessionBuilder = new LocalSessionFactoryBuilder(dataSource);
      sessionBuilder.addAnnotatedClass(User.class);
+     sessionBuilder.addAnnotatedClass(Blog.class);
+     sessionBuilder.addAnnotatedClass(Job.class);
      
      return sessionBuilder.buildSessionFactory();
 	}

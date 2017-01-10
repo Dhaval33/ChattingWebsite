@@ -1,5 +1,6 @@
 package com.niit.colchatting.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -15,9 +16,11 @@ public class User extends BaseDomain{
 	@Id
 	private String id;
 	
+	@Column(name="NAME")
 	private String Name;
 	
-	private String Email;
+	
+	private String Mail;
 	
 	private String Password;
 	
@@ -26,7 +29,7 @@ public class User extends BaseDomain{
 	
 	private String Address;
 	
-	private String ContactNo;
+	private String Contact;
 	
 	private char Role;
 	
@@ -47,12 +50,14 @@ public class User extends BaseDomain{
 		Name = name;
 	}
 
-	public String getEmail() {
-		return Email;
+	
+
+	public String getMail() {
+		return Mail;
 	}
 
-	public void setEmail(String email) {
-		Email = email;
+	public void setMail(String mail) {
+		Mail = mail;
 	}
 
 	public String getPassword() {
@@ -71,12 +76,14 @@ public class User extends BaseDomain{
 		Address = address;
 	}
 
-	public String getContactNo() {
-		return ContactNo;
+	
+
+	public String getContact() {
+		return Contact;
 	}
 
-	public void setContactNo(String contactNo) {
-		ContactNo = contactNo;
+	public void setContact(String contact) {
+		Contact = contact;
 	}
 
 	public char getRole() {
