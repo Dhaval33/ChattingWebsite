@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html data-ng-app = "myApp">
+<head>
+
+ <!-- CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/media-queries.css">
+
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+        
+        
+        <style>
+        
+        
+        
+       
+        
+        
+        </style>
+
+
+
+ <!-- <script src="js/jquery-3.1.1.js"></script>
+<script src="js/bootstrap.js"></script> -->
+
+
+  <script src="js/angular.js"></script>
+<script src="js/angular-route.js"></script>
+<script src="js/angular-cookies.js"></script>
+<script src="js/sockjs.min.js"></script>
+<script src="js/stomp.min.js"></script> 
+<script src ="js/loadash.min.js"></script>
+
+<script  src="app.js"></script>
+
+<script src="col_job/JobController.js"></script>
+	<script src="col_job/JobService.js"></script>
+
+<script src="col_user/UserService.js"></script>
+<script src="col_user/UserController.js"></script>
+
+<script src="col_chat/ChatController.js"></script>
+	<script src="col_chat/ChatService.js"></script>
+
+<script src="col_blog/BlogController.js"></script>
+	<script src="col_blog/BlogService.js"></script>
+	
+	<script src="col_friend/FriendController.js"></script>
+	<script src="col_friend/FriendService.js"></script>
+	
+	
+	 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.js"></script>
+<script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.4/lodash.min.js"></script>
+<script src ="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+	 
+
+
+ 
+
+<title>Index page</title>
+</head>
+<body>
+
+<header ng-include="'Header.html'"></header>
+
+<div data-ng-view = "">
+     </div>
+  
+
+ <footer ng-include="'Footer.html'"></footer> 
+
+ 
+</body>
+</html>

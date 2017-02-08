@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+
+</style>
+</head>
+<i><body>
+
+<h2><i>These are your new Pending Friend Requests, Please choose to Accept or Reject it</i></h2>
+
+
+<hr>
+   <div data-ng-controller="FriendController as ctrl">
+   
+    <div data-ng-repeat="friend in ctrl.pendingRequests">
+       
+           <div data-ng-repeat="user in ctrl.users" data-ng-show="friend.userId==user.userId">
+          
+          
+          User ID: {{user.name}}<br>
+        User Name: {{user.userId}}<br>
+    User Contact:{{user.mobile}}<br>
+       User Mail:{{user.mail}}<br>
+    User Address:{{user.address}}<br><br>
+    
+          <span class="glyphicon glyphicon-thumbs-up" style="color:Blue;" data-ng-click="ctrl.acceptFriend(user.userId)"></span>
+          <span class="glyphicon glyphicon-thumbs-down" style="color:Red;" data-ng-click="ctrl.acceptFriend(user.userId)"></span>
+           </div>
+          
+               
+         </div>
+        
+     </div>
+     <hr>
+        
+ <br> <br>  <br>  <br>  <br>  <br>        
+</body></i>
+</html>

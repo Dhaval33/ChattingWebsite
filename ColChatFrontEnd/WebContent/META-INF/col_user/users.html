@@ -1,0 +1,107 @@
+
+<style>
+tr:hover {background-color: #f5f5f5}
+
+tr {
+    height: 50px;
+}
+
+table {
+   width: 98%;
+   border: 1px solid black;
+   text-align: center;
+   border-collapse: collapse;
+   padding: 50px 30px 50px 80px;
+   background: url('http://localhost:9999/ColChatBackEnd/Resources/images/adminimage.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    font-family: verdana;
+    font-size: 15px;
+}
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 24px;
+    margin: 1em 0 0.5em 0;
+    
+}
+</style>
+
+
+
+
+
+</style>
+
+
+
+<div ng-controller="UserController as ctrl">
+
+<i><div class="panel-body">
+<table class="table">
+       <thead>
+		<tr>
+		<th width="80">User ID</th>
+		<th width="120">User Name</th>
+		<th width="150">User MailID</th>
+		<th width="100">Contact</th>
+		<th width="80">User Role</th>
+		<th width="100">User Status</th>
+		<th width="100">Make Admin</th>
+		<th width="80">Accept</th>
+		<th width="80">Reject</th>
+		
+		</tr>
+		</thead>
+		
+		<tr data-ng-repeat="user in ctrl.users">
+		<th width="80">{{user.userId}}</th>
+		<th width="180"><span class="glyphicon glyphicon-user " style="color:DarkCyan"></span>{{user.name}}</th>
+		<th width="150"><span class="glyphicon glyphicon-envelope"style="color:Blue"></span>{{user.mail}}</th>
+		<th width="80"><span class="fa fa-phone"style="color:Green"></span>{{user.mobile}}</th>
+		<th width="80">{{user.role}}</th>
+		<th width="80">{{user.status}}</th>
+		<th><a class="btn" href="#/" aria-label="Admin" data-ng-disabled="user.role=='Admin'" data-ng-hide="user.role=='Admin'">
+             <i class="fa fa-user-secret fa-lg" aria-hidden="true" style="color:Black;"></i></a>
+             
+             <a class="btn" data-ng-show="user.role=='Admin'" data-ng-disabled="user.role=='Admin'">
+             <i class="fa fa-user-secret fa-lg" aria-hidden="true" style="color:Black;"></i></a>
+             
+             </th>
+             
+        <th><a class="btn"  data-ng-click="ctrl.accept(user.userId)" data-ng-disabled="user.status=='A'" data-ng-show="user.status=='N'">
+                     <i class="fa fa-thumbs-up fa-lg" aria-hidden="true" style="color:SpringGreen;"></i></a>
+                     
+                     <a class="btn" data-ng-hide="user.status=='N'" data-ng-disabled="user.status!='N'">
+             <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true" style="color:SpringGreen;"></span></a>
+             
+        </th>  
+            
+                     
+          <th><a class="btn" data-ng-click="ctrl.reject(user.userId)"  data-ng-hide="user.status=='R'" data-ng-disabled="user.status=='A'">
+              <span class="glyphicon glyphicon-thumbs-down" style="color:Red;"></span></a>
+               <a class="btn" data-ng-show="user.status=='R'" data-ng-disabled="user.status=='R'"><i class="fa fa-ban fa-lg" aria-hidden="true" style="color:red;"></i></a>
+              
+</th>       
+		</tr>
+		</tbody>
+		</table>
+</div></i>
+</div>
+
+	
+
+
+	

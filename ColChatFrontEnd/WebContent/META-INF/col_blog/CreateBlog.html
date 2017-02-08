@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="favicon.ico">
+
+<!--  CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/media-queries.css">
+
+
+        <!--  Favicon and touch icons  -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"> 
+        
+
+
+</head>
+<body ng-app="myApp">
+	<div class="container" ng-controller="BlogController as ctrl">
+		<br/><br/><br/>
+		<h2>Add new Blog</h2>
+		<form class="form-horizontal" name="myForm" role="form" ng-submit="ctrl.submit()">
+			
+			<div class="form-group" ng-class="{'has-error': form.blogtitle.$dirty && form.blogtitle.$error.required}">
+				<label for="blogtitle" class="col-sm-3 control-label" style="text-align: right;">Blog Title:</label>
+				<div class="col-sm-6">
+					<input type="text" name="blogtitle" id="blogtitle" class="form-control" placeholder="Blog Title"
+						ng-model="ctrl.blog.blogtitle"   required />
+						<span ng-show="form.blogtitle.$dirty && form.blogtitle.$error.required" class="help-block"></span>
+				</div>
+			</div>
+			
+			<div class="form-group" ng-class="{'has-error': form.description.$dirty && form.description.$error.required}">
+				<label for="description" class="col-sm-3 control-label">Blog Description :</label>
+				<div class="col-sm-6">
+					<textarea rows="5" cols="80" id="description" name="description" class="form-control" ng-model="ctrl.blog.description" required></textarea>
+					<span ng-show="form.description.$dirty && form.description.$error.required"  class="help-block"></span>
+				</div>
+			</div>
+			
+			<div class="form-group">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<button type="submit" ng-disabled="form$invalid || ctrl.dataLoading" class="btn btn-success">Create Blog</button>
+					<button type="reset" class="btn btn-danger" ng-click="ctrl.reset()" >Clear</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>

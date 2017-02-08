@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="favicon.ico">
+
+
+
+</head>
+<body ng-app="myApp">
+<div class="container">
+	<div class="col-lg-12" ng-controller="BlogController as ctrl">
+		<br/><br/><br/>
+		<h3>List of Blogs</h3>
+		Search Blog:<input type="text" class="form-control control-label" size="80" ng-model="searchTerm" /><br/>
+		<div class="panel-body">
+		<div class="col-lg-12" ng-repeat="ub in ctrl.blogs  | filter:{approve: 'Y'} | filter:searchTerm | orderBy:blogcreatedate" ">
+			<div class="panel panel-success">
+				<div class="panel-heading">
+				<h3>ID: {{ub.blogid}}<h3></h3> &nbsp;  &nbsp;  &nbsp;
+					<h3 class="panel-title" style="font-weight: bold;">
+						<b>{{ub.blogtitle}}</b>
+					</h3>
+				</div>
+				<div class="panel-body" style="text-align: justify;">
+					{{ub.description}}<br/>
+				</div>
+				<p>
+					<span class="glyphicon glyphicon-calander"></span> Posted on {{ub.blogcreatedate | date:fullDate}}&nbsp;&nbsp;&nbsp;
+					<span class="glyphicon glyphicon-user"></span> Posted by {{ub.userID}}
+				</p>
+				<p ng-hide="currentUser.userId==undefined">
+					&nbsp;&nbsp;&nbsp;<button name="button" class="btn btn-success" ng-click="ctrl.likeclick(ub.blogid)">Likes&nbsp;#&nbsp;{{ub.likes}}</button>
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</body>
+</html>

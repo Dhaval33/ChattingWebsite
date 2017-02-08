@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="favicon.ico">
+
+
+</head>
+<i><body ng-app="myApp">
+	<div class="generic-container" ng-controller="BlogController as ctrl">
+		<br/><br/><br/>
+		<h3>List of Blogs</h3>
+		<table class="table table-striped" style="width: 100%">
+			<tr style="font-weight: bold;">
+				<td style="width: 10%">ID#</td>
+				<td style="width: 10%">POST DATE</td>
+				<td style="width: 20%">TITLE</td>
+				<td style="width: 40%">DESCRIPTION</td>
+				<td style="width: 10%">USERID</td>
+				<td style="width: 10%">ACCEPT</td>
+			</tr>
+			<tr ng-repeat="ub in ctrl.blogs | filter : { approve: 'N' }:true">
+				<td style="width: 10%">{{ub.blogid}}</td>
+				<td style="width: 10%">{{ub.blogcreatedate}}</td>
+				<td style="width: 20%">{{ub.blogtitle}}</td>
+				<td style="width: 40%">{{ub.description}}</td>
+				<td style="width: 10%">{{ub.userID}}</td>
+				<td style="width: 10%">
+					<input type="button" class="btn btn-success" value="Accept" ng-click="ctrl.approveblog(ub.blogid)">
+				</td>
+			</tr>
+		</table>
+	</div>
+</body></i>
+</html>

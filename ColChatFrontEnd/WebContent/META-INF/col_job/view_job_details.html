@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="shortcut icon" href="favicon.ico">
+
+<link rel="stylesheet" href="resources/css/bootstrap.min.css" />
+<script src="resources/js/bootstrap.min.js"></script>
+
+</head>
+<i><body ng-app="myApp">
+	<div class="generic-container" ng-controller="JobController as ctrl">
+		<br/><br/><br/>
+		<h3>List of Vacancies</h3>
+		Search Category:<input type="text" class="form-control control-label" size="80" ng-model="searchTerm" /><br/>
+
+
+		<div class="panel-body">
+			<div ng-repeat="uj in ctrl.jobs | filter:searchTerm">
+				<div class="panel panel-success">
+					<div class="panel-heading">
+					<h3>ID: {{uj.jobID}}<h3></h3> &nbsp;  &nbsp;  &nbsp;
+						<h3 class="panel-title" style="font-weight: bold;"><b>{{uj.title}}</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<span style="color: cyan;">{{uj.qualification}}</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</h3>
+					</div>
+					<b style="color: red;">Job Description </b><br>{{uj.description}}<br/><br/>
+				
+					<b style="color: green;">Post Date </b>{{uj.dateTime}}&nbsp;&nbsp;
+					<br/><br/>
+					<button ng-hide="currentUser.id==undefined" class="pull-center" style="font-weight: bold;" ng-click="ctrl.applyForJob(uj.jobID)">
+						<span >Apply</span>
+					</button>
+					
+				</div>
+			</div>
+		</div>
+</body></i>
+</html>

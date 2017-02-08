@@ -1,0 +1,84 @@
+<head>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/media-queries.css">
+
+
+        <!-- Favicon and touch icons -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png">
+        
+
+</head>
+<style>
+
+
+.profile{
+background: url('http://localhost:9999/ColChatBackEnd/Resources/images/profile.png') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    background-color: rgb(0, 0, 0);
+}
+
+ 
+
+</style>
+<div class = "profile">
+
+<div class="row">
+					<div class="col-sm-8 col-sm-offset-2 text">
+						<h1 class="wow fadeInLeftBig"><b>User Details</b></h1>
+						
+						<div class="description wow fadeInLeftBig">
+							<p>
+								This is your complete details regarding your registration.
+							</p>
+						</div>
+					
+				
+				
+<b><i><div class="panel-body">
+
+ <img src="http://localhost:9999/ColChatBackEnd/Resources/images/{{currentUser.userId}}.jpg" width="100px" height="50%">
+ 
+ <br>
+ <br>
+ 
+ <p> USER ID : {{currentUser.userId}}</p>
+ 
+<p>USERNAME:{{currentUser.name}}</p>
+
+<p>EMAIL:    {{currentUser.mail}}</p>
+
+<p>CONTACT NUMBER:    {{currentUser.mobile}}</p>
+
+<p>ADDRESS:    {{currentUser.address}}</p>
+
+<p>ROLE:  {{currentUser.role}}</p>
+
+<p>STATUS : {{currentUser.status}}</p>
+
+<p>ISONLINE:yes</p>
+
+
+</div>
+</div>
+</div>
+</div></i></b>
+
+
+
+
+
+
+
+

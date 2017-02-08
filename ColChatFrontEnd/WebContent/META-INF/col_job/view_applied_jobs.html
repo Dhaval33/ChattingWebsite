@@ -1,0 +1,61 @@
+<head>
+
+<style>
+
+
+tr:hover {background-color: #f5f5f5}
+
+tr {
+    height: 50px;
+}
+
+table table-striped {
+   width: 98%;
+   border: 1px solid black;
+   text-align: center;
+   border-collapse: collapse;
+   padding: 50px 30px 50px 80px;
+   
+    
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    font-family: verdana;
+    font-size: 15px;
+}
+</style>
+
+
+
+
+</head>
+<i><body>
+	<div class="generic-container" data-ng-controller="JobController as ctrl">
+		<br/><br/><br/><br/><br/>
+		<h3>List of Applied</h3>
+		<p>
+		Search Job:<input type="text" size="40" data-ng-model="searchTerm" />
+		</p><br/>
+		<table class="table table-striped" >
+			<tr style="font-weight: bold;">
+				<td style="width: 10%">ID#</td>
+				<td style="width: 10%">JOB ID</td>
+				<td style="width: 10%">STATUS</td>
+				<td style="width: 20%">USER ID</td>
+				
+				
+			<tr data-ng-repeat="ja in ctrl.jobapplications | filter:searchTerm">
+				<td style="width: 10%;">{{ja.id}}</td>
+				<td style="width: 10%;">{{ja.jobID}}</td>
+				<td style="width: 10%;">{{ja.status}}</td>
+				<td style="width: 10%;">{{ja.userID}}</td>
+				
+				
+			</tr>
+		</table>
+	</div>
+</body></i>
+</html>

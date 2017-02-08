@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="wuserIdth=device-wuserIdth, initial-scale=1">
+        <title>Header</title>
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,500,500i">
+        <link rel="stylesheet" href="asset1/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="asset1/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="asset1/css/animate.css">
+        <link rel="stylesheet" href="asset1/css/style.css">
+        
+        
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+        
+
+    </head>
+
+    <body>
+		
+		<!-- Top menu -->
+		<nav class="navbar navbar-inverse" role="navigation">
+		<div ng-controller="UserController as ctrl">
+			<div class="container">
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#/">ChatBook</a>
+				</div>
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="top-navbar-1">
+					
+					<form class="navbar-form navbar-right navbar-search-form disabled wow fadeInLeft" role="form" action="" method="post">
+						<div class="form-group">
+							<input type="text" name="search" placeholder="Search..." class="search form-control">
+						</div>
+					</form>
+					<ul class="nav navbar-nav navbar-right navbar-menu-items wow fadeIn">
+					
+					<li><a ng-show="currentUser.role=='Admin'"  href="#/ListUser">List All Users</a></li>
+					<li><a href="#/about">About Us</a></li>
+						
+					<li>
+						<a ng-show="currentUser.userId==undefined" href="#/login">Login</a>
+					</li>
+					<li><a ng-show="currentUser.userId==undefined" href="#/register">Register</a></li>
+			
+					
+					
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="#/">Friends<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#/listallusers">All Users</a></li>
+							<li><a href="#/listpending">Pending Request</a></li>
+							<li><a href="#/listmyfriends">My Friends</a></li>
+						</ul></li>
+					
+					<li ng-hide="currentUser.userId==undefined"/>
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="#/">Profile<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							
+							<li><a href="#/myProfilePage">View my Profile</a></li>
+							<li><a href="#/UploadImage">Upload Picture</a></li>
+						</ul></li>
+						
+					
+					
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="#/">Job<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a  ng-show="currentUser.role=='Admin'" href="#/post_job">Add Job</a></li>
+							<li><a href="#/view_job_details">List Jobs</a></li>
+							<li><a href="#/view_applied_jobs">List Applied Jobs</a></li>
+							<li><a href ="#/search_job"> Apply Job</a>
+						</ul></li>
+					
+					<li class="dropdown"><a class="dropdown-toggle"
+						data-toggle="dropdown" href="#/">Blog<span class="caret"></span></a>
+						<ul class="dropdown-menu">
+							<li><a href="#/addblog">Add Blog</a></li>
+							<li><a href="#/viewblogs">List Blogs</a></li>
+							<li><a ng-show="currentUser.role=='Admin'"  href="#/approveblogs">Approve Blog</a></li>
+							<li><a href="#/myblog">My Blogs</a></li>
+						</ul></li>
+						
+						
+					
+					<li ng-hide="currentUser.userId==undefined">
+						<a  href="#/" 
+							ng-click="ctrl.logout()">Logout</a>
+					</li>
+				</ul>
+				</div>
+			</div>
+			</div>
+		</nav>
+    </body>
+
+</html>

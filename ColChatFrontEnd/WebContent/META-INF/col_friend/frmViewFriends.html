@@ -1,0 +1,92 @@
+<!DOCTYPE html>/
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+
+
+tr:hover {background-color: #f5f5f5}
+
+tr {
+    height: 50px;
+}
+
+table {
+   width: 98%;
+   border: 1px solid black;
+   text-align: center;
+   border-collapse: collapse;
+   padding: 50px 30px 50px 80px;
+   
+    
+}
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid black;
+    border-right: 1px solid black;
+    font-family: verdana;
+    font-size: 15px;
+}
+.btn {
+    padding: 14px 24px;
+    border: 0 none;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 15px;
+    margin: 1em 0 0.5em 0;
+    
+}
+
+ .panel-body{
+ margin-top:20px;
+ border-radius: 20px;
+background-color:rgba(255,255,255);
+color:white;
+}  
+
+</style>
+
+</head>
+<i><body>
+<div data-ng-controller="FriendController as ctrl">
+
+
+
+    <div data-ng-repeat="friend in ctrl.friends | filter:{status:'A'}">
+     
+        <div  data-ng-repeat="user in ctrl.users">  
+         
+             <div data-ng-show="friend.friendId==user.userId">   
+           <div data-ng-show="user.userId!=currentUser.userId"> 
+         User Name: {{user.name}}<br>
+         User ID: {{user.userId}}<br>
+         User Contact: {{user.mobile}}<br>
+         Mail: {{user.mail}}<br>
+         Address:{{user.address}}<br><br>
+          		<button class="btn btn-warning"  data-ng-click="ctrl.unFriend(user.userId)">UnFriend</button>
+          		 <a class = "btn btn-success" href ="#/chat">Start Chatting</a>
+          
+          </div> 
+          </div>
+          
+          
+              
+              
+                <div data-ng-show="friend.userId==user.userId">   
+           <div data-ng-show="user.userId!=currentUser.userId"> 
+         User Name: {{user.name}}<br>
+         User ID: {{user.userId}}<br>
+         User Contact: {{user.mobile}}<br>
+         Mail: {{user.mail}}<br>
+         Address:{{user.address}}<br><br>
+          		<button class="btn btn-warning"  data-ng-click="ctrl.unFriend(user.friendId)">UnFriend</button>
+           <a class = "btn btn-success" href ="#/chat">Start Chatting</a>
+          </div> 
+          </div>
+          </div>
+          </div> </div>
+</body></i>
+</html>

@@ -1,0 +1,79 @@
+
+<head>
+
+<!--  CSS -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" href="assets/font-awesome/css/font-awesome.min.css">
+        <link rel="stylesheet" href="assets/css/animate.css">
+        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/media-queries.css">
+
+
+        <!--  Favicon and touch icons  -->
+        <link rel="shortcut icon" href="assets/ico/favicon.png">
+        <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png">
+        <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"> 
+        
+
+
+
+</head>
+
+
+<body>
+
+<div ng-hide="CurrentUser==''" >
+	<div class="container" ng-controller="JobController as ctrl">
+
+<br/><br/><br/>
+		<h2>Please fill in the Job Details</h2>
+		
+		<form class="form-horizontal" name="myForm" role="form" ng-submit="ctrl.submit()">
+			
+			<div class="form-group" ng-class="{'has-error': form.title.$dirty && form.title.$error.required}">
+				<label for="title" class="col-sm-3 control-label" style="text-align: right;">JOB TITLE:</label>
+				<div class="col-sm-6">
+					<input type="text" name="title" id="title" class="form-control" placeholder="Job Title"
+						ng-model="ctrl.job.title"   required />
+						<span ng-show="form.title.$dirty && form.title.$error.required" class="help-block"></span>
+				</div>
+			</div>
+			
+			<div class="form-group" ng-class="{'has-error': form.qualification.$dirty && form.qualification.$error.required}">
+				<label for="qualification" class="col-sm-3 control-label" style="text-align: right;">QUALIFICATION REQUIRED:</label>
+				<div class="col-sm-6">
+					<input type="text" name="qualification" id="qualification" class="form-control" placeholder="Job Qualification"
+						ng-model="ctrl.job.qualification"   required />
+						<span ng-show="form.qualification.$dirty && form.qualification.$error.required" class="help-block"></span>
+				</div>
+			</div>
+		
+			<div class="form-group" ng-class="{'has-error': form.description.$dirty && form.description.$error.required}">
+				<label for="description" class="col-sm-3 control-label">JOB  :</label>
+				<div class="col-sm-6">
+					<textarea rows="5" cols="80" id="description" name="description" class="form-control" ng-model="ctrl.job.description" pattern="[A-Za-z]{3}" required></textarea>
+					<span ng-show="form.description.$dirty && form.description.$error.required" class="help-block"></span>
+				</div>
+			</div>
+
+		
+<div class="form-group">
+				<div class="col-sm-3"></div>
+				<div class="col-sm-6">
+					<button type="submit" ng-disabled="form$invalid || ctrl.dataLoading" class="btn btn-info">Add Job</button>
+					<button type="reset" class="btn btn-danger" ng-click="ctrl.reset()" >Clear</button>
+				</div>
+			</div>
+		</form>
+	</div>
+</body>
+</html>
+			
+
+
+						
+
+</body>
